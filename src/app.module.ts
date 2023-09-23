@@ -11,6 +11,7 @@ import { CommunityModule } from './community/community.module';
 import { ImageModule } from './image/image.module';
 import { BoardImageModule } from './board_image/board_image.module';
 import { FollowModule } from './follow/follow.module';
+import { BoardLikeModule } from './board_like/board_like.module';
 
 @Module({
   imports: [
@@ -32,7 +33,8 @@ import { FollowModule } from './follow/follow.module';
     CommunityModule,
     ImageModule,
     BoardImageModule,
-    FollowModule],
+    FollowModule,
+    BoardLikeModule],
   controllers: [AppController],
   providers: [AppService],
 })

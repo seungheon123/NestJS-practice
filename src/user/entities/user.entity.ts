@@ -1,4 +1,5 @@
 import { Board } from "src/board/entities/board.entity";
+import { BoardLike } from "src/board_like/entities/board_like.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 
@@ -15,5 +16,10 @@ export class User {
 
     @OneToMany(()=>Board, (board)=>board.user)
     boards: Board[];
+
+    @OneToMany(()=>BoardLike, (boardLike)=>boardLike.user)
+    boardLike: BoardLike[];
+
+    
 
 }
