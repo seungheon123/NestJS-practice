@@ -13,7 +13,7 @@ export class User {
     @Column({type: "varchar", length: 45})
     email: string;
 
-    @Column({type: "tinyint", name: "login_type"})
+    @Column({type: 'varchar',length:45, name: "login_type"})
     type: string;
 
     @OneToMany(()=>Board, (board)=>board.user)
