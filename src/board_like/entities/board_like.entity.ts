@@ -7,11 +7,11 @@ export class BoardLike {
     @PrimaryGeneratedColumn({name:'board_like_id'})
     id:number;
 
-    @ManyToOne(()=>User, (user)=>user.id)
+    @ManyToOne(()=>User, (user)=>user.boardLikes)
     @JoinColumn({name:'user_id'})
     user:User;
 
-    @ManyToOne(()=>Board, (board)=>board.id)
+    @ManyToOne(()=>Board, (board)=>board.boardLikes)
     @JoinColumn({name:'board_id'})
     board:Board;
 

@@ -21,7 +21,7 @@ export class Profile {
     @Column({type:"varchar",length:45})
     role: string;
 
-    @OneToOne(()=>User)
+    @OneToOne(()=>User, (user)=>user.profile)
     @JoinColumn({name:'user_id'})
     user: User
 

@@ -1,6 +1,8 @@
 import { Board } from "src/board/entities/board.entity";
 import { BoardLike } from "src/board_like/entities/board_like.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Profile } from "src/profile/entities/profile.entity";
+import { Scrap } from "src/scrap/entities/scrap.entity";
+import { Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
@@ -18,8 +20,11 @@ export class User {
     boards: Board[];
 
     @OneToMany(()=>BoardLike, (boardLike)=>boardLike.user)
-    boardLike: BoardLike[];
+    boardLikes: BoardLike[];
 
-    
+    @OneToMany(()=>Scrap, (scrap)=>scrap.user)
+    scraps: Scrap[];
 
+    @OneToOne(()=>Profile, (profile)=>profile.user)
+    profile: Profile;
 }

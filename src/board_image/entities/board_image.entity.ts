@@ -13,11 +13,11 @@ export class BoardImage {
     @Column({type:'tinyint'})
     image_level:number;
 
-    @ManyToOne(()=>Board, (board)=>board.id)
+    @ManyToOne(()=>Board, (board)=>board.boardImages)
     @JoinColumn({name:'board_id'})
     board:Board
 
-    @OneToOne(()=>Image, (image)=>image.id)
+    @OneToOne(()=>Image, (image)=>image.boardImage)
     @JoinColumn({name:'image_id'})
     image:Image
 }

@@ -1,6 +1,7 @@
 import { BoardImage } from "src/board_image/entities/board_image.entity";
 import { BoardLike } from "src/board_like/entities/board_like.entity";
 import { Community } from "src/community/entities/community.entity";
+import { Scrap } from "src/scrap/entities/scrap.entity";
 import { User } from "src/user/entities/user.entity";
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
@@ -42,5 +43,8 @@ export class Board {
     boardImages: BoardImage[];
 
     @OneToMany(()=>BoardLike, (boardLike)=>boardLike.board)
-    boardLike: BoardLike[];
+    boardLikes: BoardLike[];
+
+    @OneToMany(()=>Scrap, (scrap)=>scrap.board)
+    scraps: Scrap[];
 }

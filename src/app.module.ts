@@ -12,6 +12,7 @@ import { ImageModule } from './image/image.module';
 import { BoardImageModule } from './board_image/board_image.module';
 import { FollowModule } from './follow/follow.module';
 import { BoardLikeModule } from './board_like/board_like.module';
+import { ScrapModule } from './scrap/scrap.module';
 
 @Module({
   imports: [
@@ -34,7 +35,8 @@ import { BoardLikeModule } from './board_like/board_like.module';
     ImageModule,
     BoardImageModule,
     FollowModule,
-    BoardLikeModule],
+    BoardLikeModule,
+    ScrapModule],
   controllers: [AppController],
   providers: [AppService],
 })

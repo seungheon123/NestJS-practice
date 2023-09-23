@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BoardImage } from "src/board_image/entities/board_image.entity";
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Image {
@@ -10,4 +11,7 @@ export class Image {
 
     @Column({type:'varchar',length:45})
     description: string;
+
+    @OneToOne(()=>BoardImage, (boardImage)=>boardImage.image)
+    boardImage: BoardImage;
 }
